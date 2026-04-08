@@ -5,6 +5,8 @@ target/
 !**/src/test/**/target/
 *.log
 *.properties
+keys/
+DataLoader.java
 
 ### STS ###
 .apt_generated
@@ -33,4 +35,5 @@ build/
 
 ### VS Code ###
 .vscode/
-src/main/resources/application.properties
+
+src/main/java/com/skillissue/GLPUinventory/DataLoader.java
