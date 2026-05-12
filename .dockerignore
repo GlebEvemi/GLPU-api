@@ -1,0 +1,9 @@
+.git
+.vscode
+target/*.original
+Dockerfile
+docker-compose.yml
+README.md
+logs/
+.env
+certs/

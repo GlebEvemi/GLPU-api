@@ -1,0 +1,50 @@
+version: '3.9'
+
+services:
+
+  mariadb:
+    image: mariadb:11
+    container_name: glpu-mariadb
+
+    restart: unless-stopped
+
+    environment:
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  glpu-server:
+    build: .
+
+    container_name: glpu-server
+
+    restart: unless-stopped
+
+    depends_on:
+      - mariadb
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+
+      SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
+      SERVER_SSL_KEY_STORE: ${SERVER_SSL_KEY_STORE}
+
+
+    volumes:
+      - ./logs:/app/logs
+      - ./certs:/app/certs
+
+volumes:
+  mariadb_data:

@@ -4,11 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 *.log
+logs/
 *.properties
 keys/
 DataLoader.java
 
-### STS ###
+
 .apt_generated
 .classpath
 .factorypath
@@ -17,13 +18,14 @@ DataLoader.java
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
+
 .idea
 *.iws
 *.iml
 *.ipr
+.env
 
-### NetBeans ###
+
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -37,3 +39,21 @@ build/
 .vscode/
 
 src/main/java/com/skillissue/GLPUinventory/DataLoader.java
+
+.DS_Store
+Thumbs.db
+
+docker-data/
+
+spring.log
+
+
+*.p12
+*.jks
+*.pem
+*.key
+*.crt
+
+
+*.tmp
+*.swp
