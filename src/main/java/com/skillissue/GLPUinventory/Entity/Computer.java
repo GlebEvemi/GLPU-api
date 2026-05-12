@@ -24,7 +24,7 @@ public class Computer {
 
     @JsonProperty("BiosManufacturer")
     @Column(name = "biosManufacturer")
-    private String gpu;
+    private String biosManufacturer;
 
     @JsonProperty("BiosStatus")
     @Column(name = "biosStatus")
@@ -44,29 +44,27 @@ public class Computer {
 
     @JsonProperty("totalRam_Gb")
     @Column(name = "totalRam_Gb")
-    private String totalRam;
+    private Double totalRam;
 
     @JsonProperty("diskTotalSize")
     @Column(name = "diskTotalSize")
-    private String totalSize;
+    private Double totalSize;
 
     @JsonProperty("diskFreeGb")
     @Column(name = "diskFreeGb")
-    private String freeSpace;
+    private Double freeSpace;
     
 
     public Computer() {
     }
 
-    
 
-
-    public Computer(String hostname, String osName, String osVersion, String gpu, String biosStatus,
-            String domain, String model, String processorName, String totalRam, String totalSize, String freeSpace) {
+    public Computer(String hostname, String osName, String osVersion, String biosManufacturer, String biosStatus,
+            String domain, String model, String processorName, Double totalRam, Double totalSize, Double freeSpace) {
         this.hostname = hostname;
         this.osName = osName;
         this.osVersion = osVersion;
-        this.gpu = gpu;
+        this.biosManufacturer = biosManufacturer;
         this.biosStatus = biosStatus;
         this.domain = domain;
         this.model = model;
@@ -75,6 +73,7 @@ public class Computer {
         this.totalSize = totalSize;
         this.freeSpace = freeSpace;
     }
+
 
     public String getHostname() {
         return hostname;
@@ -106,13 +105,13 @@ public class Computer {
     }
 
 
-    public String getGpu() {
-        return gpu;
+    public String getBiosManufacturer() {
+        return biosManufacturer;
     }
 
 
-    public void setGpu(String gpu) {
-        this.gpu = gpu;
+    public void setBiosManufacturer(String biosManufacturer) {
+        this.biosManufacturer = biosManufacturer;
     }
 
 
@@ -156,35 +155,35 @@ public class Computer {
     }
 
 
-    public String getTotalRam() {
+    public Double getTotalRam() {
         return totalRam;
     }
 
 
-    public void setTotalRam(String totalRam) {
+    public void setTotalRam(Double totalRam) {
         this.totalRam = totalRam;
     }
 
 
-    public String getTotalSize() {
+    public Double getTotalSize() {
         return totalSize;
     }
 
 
-    public void setTotalSize(String totalSize) {
+    public void setTotalSize(Double totalSize) {
         this.totalSize = totalSize;
     }
 
 
-    public String getFreeSpace() {
+    public Double getFreeSpace() {
         return freeSpace;
     }
 
 
-    public void setFreeSpace(String freeSpace) {
+    public void setFreeSpace(Double freeSpace) {
         this.freeSpace = freeSpace;
     }
-    
+
     
     
     
